@@ -23,10 +23,9 @@ public class CSRFScanner {
     	
     	// id of hidden field carrying anti-csrf token
     	csrfTokenId = "csrfToken";
-    	/**
-	 * This unique string is included in error response when server side csrf token validation fails
-	 * Note: It is not a good idea to explicitly show that it is a CSRF token validation error, 
-	 */
+    	
+	// This unique string is included in error response when server side csrf token validation fails
+	// Note: It is not a good idea to explicitly show that it is a CSRF token validation error, 
     	csrfErrorResponse = "CSRFTokenValidationError";
     	
     	tester = new WebTester();
