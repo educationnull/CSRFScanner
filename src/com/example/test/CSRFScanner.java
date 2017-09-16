@@ -24,13 +24,14 @@ public class CSRFScanner {
     	// id of hidden field carrying anti-csrf token
     	csrfTokenId = "csrfToken";
     	// this unique string is included in error response on csrf token validation failure
+	// Note: It is not a good idea to explicitly show that it is a CSRF token validation error
     	csrfErrorResponse = "CSRFTokenValidationError";
     	
     	tester = new WebTester();
     }
     
     public void login() {
-    	//get the login page
+    	//get the login page 
         tester.beginAt(baseURL);
         // Set the username
         tester.setTextField("userName", "<username>");
