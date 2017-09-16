@@ -100,6 +100,7 @@ public class CSRFScanner {
 		  tester.submit();
 		  boolean hasErrorResponse = tester.getPageSource().contains(csrfErrorResponse);
 		  logout();
-		  Assert.assertTrue("No Anti-CSRF Token Mismatch Error response on Invalid token", hasErrorResponse);		  
+		  Assert.assertTrue("\n     No Anti-CSRF Token Mismatch Error response on Invalid token\n", 
+			+ "    Possible cause: Server side CSRF token validation is not enabled", hasErrorResponse);		  
 	 }
 }
