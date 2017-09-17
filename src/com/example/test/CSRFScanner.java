@@ -32,15 +32,15 @@ public class CSRFScanner {
     }
     
     public void login() {
-    	//get the login page 
+    	// Get the login page 
         tester.beginAt(baseURL);
-        // Set the username
+	    
+        //  Login with userid and password
         tester.setTextField("userName", "<username>");
-        // set the password
         tester.setTextField("passWord", "<password>");
-        // Submit login. The button name here is "login"
         tester.submit("login");
-        // On login, get the page of interest to scan for csrf vulnerability
+	    
+        // Get the page of interest to scan for csrf vulnerability
         tester.gotoPage(scanURL);
     }
     
@@ -56,10 +56,10 @@ public class CSRFScanner {
     	testInvalidToken();
     }
     
-    /**
-     * Check if csrf token exists in the form
-     */
-	 private void testTokenExists() {	  
+	/**
+     	 * Check if csrf token exists in the form
+     	 */
+	private void testTokenExists() {	  
 		  login();
 		  boolean hasCsrfToken = tester.hasElementById(csrfTokenId);
 		  logout();
